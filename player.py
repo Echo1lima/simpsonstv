@@ -28,11 +28,10 @@ def playVideos():
         # -really-quiet: Minimal console output
         # -noborder: No window decoration
         playProcess = Popen([
-            'mplayer',
-            '-fs',
-            '-nolirc',
-            '-really-quiet',
-            '-noborder',
+            'mpv',
+            'no-window',
+            'vo=drm',
+            'hwdec=auto',
             video
         ])
         playProcess.wait()
