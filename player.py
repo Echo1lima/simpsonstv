@@ -22,11 +22,10 @@ def playVideos():
     
     random.shuffle(videos)
     for video in videos:
-        # MPlayer command line arguments:
-        # -fs: Fullscreen mode
-        # -nolirc: Disable LIRC interface
-        # -really-quiet: Minimal console output
-        # -noborder: No window decoration
+        # mpv command line arguments:
+        # -no-window: prevent opening for audio tracs
+        # -vo=drm: drop the drm master when doing VT switch
+        # -hwdec=auto: enables hardware acceleration
         playProcess = Popen([
             'mpv',
             'no-window',
